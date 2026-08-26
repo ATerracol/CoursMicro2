@@ -1070,20 +1070,19 @@ Un consommateur de type $i$ qui accepte le menu $(q,T)$ obtient donc un surplus
 
 $$U_i(q,T) = V_i(q) - T.$$
 
-Comme $P_2(q)>P_1(q)$ pour tout $q$, on a $V_2(q)>V_1(q)$, et surtout l'écart $V_2(q)-V_1(q)$ est **croissant** en $q$ : plus la quantité (ou la qualité) est élevée, plus l'avantage du type 2 sur le type 1 à la consommer est grand.
-C'est cette propriété (dite de *simple croisement*) qui rend la discrimination possible.
+Comme $P_2(q)>P_1(q)$ pour tout $q$, on a $V_2(q)>V_1(q)$, et surtout l'écart $V_2(q)-V_1(q)$ est **croissant** en $q$ : plus la quantité est élevée, plus l'avantage du type 2 sur le type 1 à la consommer est grand.
 
 #### Le programme du monopole
 
 Le monopoleur propose deux menus, $(q_1,T_1)$ destiné au type 1 et $(q_2,T_2)$ destiné au type 2.
 Avec autant de consommateurs de chaque type, son profit (par paire de consommateurs, un de chaque type) s'écrit
 
-$$\max_{q_1,T_1,q_2,T_2}\ \Pi = \big(T_1 - c\,q_1\big) + \big(T_2 - c\,q_2\big).$$
+$$\Pi = \big(T_1 - c\,q_1\big) + \big(T_2 - c\,q_2\big).$$
 
 Puisqu'il ne peut pas identifier les types, il ne peut pas *imposer* à chaque consommateur le menu qui lui est destiné : il doit concevoir les menus de sorte que chacun **choisisse librement** le bon.
 Deux séries de contraintes en découlent.
 
-**Contraintes de participation** (chaque type doit préférer son menu à ne rien acheter, surplus nul) :
+**Contraintes de participation** (chaque type doit préférer son menu à ne rien acheter, et obtenir un surplus nul) :
 
 $$V_1(q_1) - T_1 \geq 0 \tag{CP$_1$}$$
 
@@ -1098,7 +1097,7 @@ $$V_2(q_2) - T_2 \geq V_2(q_1) - T_1 \tag{CI$_2$}$$
 #### Quelles contraintes sont saturées ?
 
 Résoudre le programme revient à déterminer *lesquelles* de ces quatre contraintes sont saturées (vérifiées avec égalité) à l'optimum.
-On remarquera que ce raisonnement ne dépend **pas** des proportions de chaque type : il repose uniquement sur la structure des contraintes.
+
 
 - **(CP**$_1$) est saturée.
   Si le type 1 conservait un surplus strictement positif, le monopoleur pourrait augmenter *simultanément* $T_1$ et $T_2$ d'un même petit montant : les deux contraintes d'incitation, qui ne portent que sur des *différences* de tarifs, sont préservées, et le profit augmente.
@@ -1106,7 +1105,7 @@ On remarquera que ce raisonnement ne dépend **pas** des proportions de chaque t
   $$T_1 = V_1(q_1).$$
 
 - **(CI**$_2$) est saturée.
-  Une fois $T_1$ fixé, le monopoleur augmente $T_2$ autant que possible pour extraire le surplus du type 2.
+  Une fois $T_1$ fixé à $V_1\left(q_1\right)$, le monopoleur augmente $T_2$ autant que possible pour extraire le surplus du type 2.
   Il est arrêté par la contrainte d'incitation du type 2 : au-delà, le type 2 préférerait choisir le menu 1.
   À l'optimum le type 2 est donc *indifférent* entre les deux menus :
   $$V_2(q_2) - T_2 = V_2(q_1) - T_1 \quad\Longrightarrow\quad T_2 = V_2(q_2) - \big[V_2(q_1) - V_1(q_1)\big].$$
@@ -1114,7 +1113,7 @@ On remarquera que ce raisonnement ne dépend **pas** des proportions de chaque t
 
 - **(CP**$_2$) et (CI$_1$) sont vérifiées automatiquement (elles sont *non saturées*).
   Pour (CP$_2$) : le surplus du type 2 vaut $V_2(q_1)-V_1(q_1)\geq 0$, donc il participe.
-  Pour (CI$_1$) : comme $V_2(q_2)-V_2(q_1)\geq V_1(q_2)-V_1(q_1)$ (propriété de simple croisement), on vérifie que le type 1 ne gagne rien à choisir le menu 2 ; il n'est donc jamais tenté de dévier.
+  Pour (CI$_1$) : comme $V_2(q_2)-V_2(q_1)\geq V_1(q_2)-V_1(q_1)$, on vérifie que le type 1 ne gagne rien à choisir le menu 2 ; il n'est donc jamais tenté de dévier.
   Il est inutile de les imposer.
 
 On retiendra la règle générale de ces problèmes : c'est la contrainte de **participation du type « bas »** et la contrainte d'**incitation du type « haut »** qui sont saturées.
@@ -1134,7 +1133,7 @@ $$\frac{\partial \Pi}{\partial q_1}=0 \ \Leftrightarrow\ \big(P_1(q_1^m)-c\big) 
 Ces deux conditions résument tout le résultat.
 
 1.  **Pas de distorsion « en haut ».** La quantité offerte au type 2 est celle de la discrimination parfaite, $q_2^m=q_2^o$, définie par $P_2(q_2^m)=c$.
-    Le monopoleur produit la quantité efficace pour le type 2 ; il se contente d'en réduire le tarif pour laisser la rente $B$.
+    Le monopoleur produit la quantité efficace pour le type 2 ; il se contente d'en réduire le tarif pour laisser la rente $V_2\left(q_1\right)-V_1\left(q_1\right)$.
 
 2.  **Distorsion « en bas ».** La quantité offerte au type 1 est *réduite* en deçà de son niveau efficace $q_1^o$ (défini par $P_1(q_1^o)=c$).
     En effet le membre de droite de l'@eq-cpo2e est strictement positif, donc $P_1(q_1^m)>c$, c'est-à-dire $q_1^m<q_1^o$.
