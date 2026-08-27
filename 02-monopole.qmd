@@ -130,8 +130,7 @@ R_m(q)& = R'(q) \\
 \end{align*}
 
 On peut donc écrire :
-$$R_m(q) = P(q)\left(1 - \frac{1}{|\varepsilon_{q/p}(q)|}\right)$$
- {#eq-rm}
+$$R_m(q) = P(q)\left(1 - \frac{1}{|\varepsilon_{q/p}(q)|}\right)$$ {#eq-rm}
 
 ::: {#prp-elasticite}
 ## Élasticité prix de la demande et recette marginale
@@ -267,12 +266,9 @@ Dans le cas contraire, le marché n'existerait pas, car le monopole ne produirai
 À l'optimum, le monopole égalise le coût marginal et le revenu marginal.
 Ce n'est un maximum que si la dérivée de la recette marginale est inférieure à la dérivée du coût marginal et que le profit est positif.
 
-$$R_m(q^*)=C_m(q^*) $$
- {#eq-cpo}
-$$R_m'(q^*) <C_m'(q^*)$$
- {#eq-cso}
-$$\pi(q^*)\geq0 $$
- {#eq-profitpos}
+$$R_m(q^*)=C_m(q^*) $$ {#eq-cpo}
+$$R_m'(q^*) <C_m'(q^*)$$ {#eq-cso}
+$$\pi(q^*)\geq0 $$ {#eq-profitpos}
 :::
 
 La @fig-monopoleoptimale donne l'intuition graphique de l'égalité entre le coût marginal et la recette marginale.
@@ -395,8 +391,7 @@ p7
 On avait dans l'@eq-rm :
 $$R_m(q) = P(q)\left(1 - \frac{1}{|\varepsilon_{q/p}(q)|}\right)$$
 Comme à l'optimum, d'après l'@eq-cpo, on doit avoir $R_m(q^*)=C_m(q^*)$, on a :
-$$R_m(q^*) = P(q^*)\left(1 - \frac{1}{|\varepsilon_{q/p}(q^*)|}\right) = C_m(q^*) $$
- {#eq-rmcm}
+$$R_m(q^*) = P(q^*)\left(1 - \frac{1}{|\varepsilon_{q/p}(q^*)|}\right) = C_m(q^*) $$ {#eq-rmcm}
 
 On observe ici un lien avec la solution en CPP.
 En effet, en CPP, l'élasticité de la demande au prix est perçue comme infinie, on aura donc bien $P(q^*) = C_m(q^*)$, la solution obtenue en CPP.
@@ -440,8 +435,7 @@ $$\begin{array}{rl}
 ## Indice de Lerner
 
 L'indice de Lerner $L$ mesure la capacité d'un monopole à vendre au-dessus de son prix marginal :
-$$L=\frac{P(q^*) - C_m(q^*)}{P(q^*)} $$
- {#eq-Lerner}
+$$L=\frac{P(q^*) - C_m(q^*)}{P(q^*)} $$ {#eq-Lerner}
 :::
 
 D'après les calculs précédents, l'indice de Lerner est inversement proportionnel à l'élasticité prix de la demande.
@@ -1276,8 +1270,9 @@ $$\begin{array}{rl}
 &\frac{dR_A(q_A) + R_B(q-q_A) }{dq_A} = 0\\
 \Leftrightarrow & R_{mA}(q_A) - R_{mB}(q-q_A) = 0\\
 \Leftrightarrow & R_{mA}(q_A) = R_{mB}(q_B) 
-\end{array}$$
- {#eq-cpo3e} L'@eq-cpo3e nous dit que le monopole réparti la quantité totale produite de manière à égaliser les recettes marginales entre les deux groupes.
+\end{array}$$ {#eq-cpo3e}
+
+L'@eq-cpo3e nous dit que le monopole répartit la quantité totale produite de manière à égaliser les recettes marginales entre les deux groupes.
 Elle nous donne aussi une relation implicite entre $q_A$ et $q_B$, qui nous permet ainsi d'obtenir $q_A^*(q_B)$ ou bien $q_B^*(q_A)$.
 
 Intuitivement, si la recette marginale issue du groupe A est supérieure à celle issue du groupe B ($R_{mA}(q_A) > R_{mB}(q_B)$), alors en diminuant la quantité $q_B$ dans le groupe B et en la transférant au groupe A, le monopole perd $R_{mB}(q_B)$ et gagne $R_{mA}(q_A)$, donc la recette totale augmente et le profit aussi.
