@@ -656,75 +656,162 @@ Ces règles de tarification sont en général difficile à mettre en oeuvre, car
 
 ### Taxes et subventions
 
-#### Taxe unitaire
+#### Subvention unitaire
 
-::: {#def-tunitaire}
-## Taxe unitaire
+::: {#def-subvunitaire}
+## Subvention unitaire
 
-Une taxe unitaire $t$ est une taxe **par unité de bien produite**.
+Une subvention unitaire $s$ est une somme versée au producteur **par unité de bien produite**.
 :::
 
-Si un régulateur impose une taxe de $t$ unités monétaire par unité de bien produite, le profit du monopole se réécrit :
+Si le régulateur verse $s$ unités monétaires par unité de bien produite, le profit du monopole se réécrit :
 
-$$\pi(q) = R(q) - C(q) -tq$$
+$$\pi(q) = R(q) - C(q) + sq$$
 
-La condition de première ordre de la maximisation du producteur de l'@eq-cpo devient :
+La condition du premier ordre de l'@eq-cpo devient :
 $$\begin{array}{crcl}
-&(R(q)-C(q) -tq)'(q^*) &=& 0\\
-\Leftrightarrow & R_m(q^*)-C_m(q*) -t &=& 0\\
-\Leftrightarrow & R_m(q^*)& = &C_m(q^*) + t
+&(R(q)-C(q) +sq)'(q^*) &=& 0\\
+\Leftrightarrow & R_m(q^*)-C_m(q^*) +s &=& 0\\
+\Leftrightarrow & R_m(q^*)& = &C_m(q^*) - s
 \end{array}$$
 
-Le problème est exactement le même que précédemment, en intégrant la taxe dans le coût marginal.
-Pour le monopole, c'est comme si le régulateur ajoutait un coût $t$ à chaque unité produite.
-C'est effectivement ce que le régulateur fait si on considère le coût de production au sens large.
+Le problème est exactement le même que précédemment, en intégrant la subvention dans le coût marginal.
+Pour le monopole, c'est comme si le régulateur retranchait un coût $s$ à chaque unité produite.
 
-```{r monopoletaxeunitaire}
-#| label: fig-mono-taxe-unitaire
-#| fig-cap: "Impact d'une taxe unitaire : augmentation du coût marginal."
-t <- 0.2
+```{r monopolesubventionunitaire}
+#| label: fig-mono-subv-unitaire
+#| fig-cap: "Impact d'une subvention unitaire : diminution du coût marginal."
+s <- 0.2
+qs <- (1+s)/3
 
-p_taxeunitaire <- ggplot() +
+p_subvunitaire <- ggplot() +
   geom_function(fun=function(x) P(x), colour = "blue") +
   geom_function(fun=function(x) Rm(x), colour = "green") +
-  labs(x="quantité", y = "prix") +
   geom_function(fun=function(x) Cm(x), colour="red") +
-  scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(P(4/15), P(qm)), labels=c(expression(p[t]^"*"), expression(p^"*"))) +
-  scale_x_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(4/15, qm), labels=c(expression(q[t]^"*"), expression(q^"*"))) +
-  annotate("text", x=0.8, y=0.2, label="demande", color="blue") +
-  annotate("text", x=0.5, y=0.2, label="recette marginale", color="green") +
-  annotate("text", x=1, y=Cm(1)-0.1, label="coût marginal", color="red")
+  labs(x="quantité", y = "prix") +
+  scale_x_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(qm, qs), labels=c(expression(q^"*"), expression(q[s]^"*"))) +
+  geom_text(aes(x=0.80, y=P(0.80)+0.09, label="Demande~(P)"), color="blue", parse=TRUE) +
+  geom_text(aes(x=0.33, y=0.06, label="Recette~marginale~(R[m])"), color="green", parse=TRUE) +
+  geom_text(aes(x=0.88, y=Cm(0.88)+0.09, label="Coût~marginal~(C[m])"), color="red", parse=TRUE)
 
-
-p_taxeunitaire  + geom_function(fun=function(x) Cm(x)+t, colour="darkred") +
-  annotate("text", x=0.8, y=Cm(0.8)+t+0.1, label="coût marginal + taxe unitaire", color="darkred")
+p_subvunitaire +
+  geom_function(fun=function(x) Cm(x)-s, colour="darkred") +
+  geom_text(aes(x=1.06, y=Cm(1.06)-s-0.09, label="C[m]-s"), color="darkred", parse=TRUE) +
+  scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(P(qs), P(qm)), labels=c(expression(p[s]^"*"), expression(p^"*")))
 ```
 
-Cela entraîne une diminution de la quantité produite et une augmentation du prix.
-Le surplus des consommateurs baisse, ainsi que celui du monopole.
+Cela entraîne une augmentation de la quantité produite et une diminution du prix, donc une hausse du surplus des consommateurs.
+C'est l'effet inverse de celui d'une taxe unitaire, qui correspondrait à $s<0$ : elle relèverait le coût marginal perçu, réduirait la quantité et augmenterait le prix.
 
-Une vision **alternative** à l'augmentation du coût marginal est de considérer que la taxe diminue la recette marginale de $t$ :
-$$R_m(q^*) -t = C_m(q^*)$$
+Une vision **alternative** à la diminution du coût marginal est de considérer que la subvention augmente la recette marginale de $s$ :
+$$R_m(q^*) + s = C_m(q^*)$$
 
-```{r monopoletaxeunitaire2}
-#| label: fig-mono-taxe-unitaire-2
-#| fig-cap: "Impact d'une taxe unitaire : diminution de recette marginale."
-p_taxeunitaire  + geom_function(fun=function(x) P(x)-t, colour="darkblue") +
-  geom_function(fun=function(x) Rm(x)-t, colour="darkgreen") +
-  annotate("text", x=0.8, y=P(0.8)-t+0.1, label="demande - taxe", color="darkblue") +
-  annotate("text", x=0.4, y=Rm(0.4)-t+0.1, label="recette marginale - taxe", color="darkgreen") +
-  geom_segment(aes(x=0, y=P(4/15)-t, xend=4/15, yend=P(4/15)-t), linetype="dashed") +
-  annotate("text", x=0.3, y = 0.5, label="Prix perçu par le monopole avec taxe")
+Le monopole vend chaque unité au prix $P(q)$ et reçoit en plus $s$ du régulateur : il perçoit donc en réalité une demande $P(q)+s$, et la recette marginale qui lui correspond est $R_m(q)+s$.
+
+```{r monopolesubventionunitaire2}
+#| label: fig-mono-subv-unitaire-2
+#| fig-cap: "Impact d'une subvention unitaire : augmentation de la recette marginale."
+p_subvunitaire +
+  geom_function(fun=function(x) P(x)+s, colour="darkblue") +
+  geom_function(fun=function(x) Rm(x)+s, colour="darkgreen") +
+  geom_text(aes(x=1.10, y=P(1.10)+s+0.09, label="P+s"), color="darkblue", parse=TRUE) +
+  geom_text(aes(x=0.70, y=0.16, label="R[m]+s"), color="darkgreen", parse=TRUE) +
+  geom_segment(aes(x=0, y=P(qs)+s, xend=qs, yend=P(qs)+s), linetype="dashed") +
+  scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(P(qs), P(qm), P(qs)+s),
+                     labels=c(expression(p[s]^"*"), expression(p^"*"), expression(p[s]^"*"+s)))
 ```
 
-Si le régulateur utilise une taxe négative (= une subvention), alors il peut augmenter la production et diminuer le prix.
+##### La subvention qui rétablit l'optimum
+
+Le régulateur ne choisit pas $s$ au hasard : il cherche le niveau de subvention qui amène le monopole à produire *de lui-même* la quantité de concurrence pure et parfaite $q^*_{CPP}$, celle qui maximise le surplus total.
+Il lui suffit pour cela de choisir $s$ de sorte que la recette marginale et le coût marginal se croisent en $q^*_{CPP}$.
+
+Par définition, $q^*_{CPP}$ vérifie $P(q^*_{CPP}) = C_m(q^*_{CPP})$.
+En reportant cette égalité dans la condition du premier ordre $R_m(q^*)=C_m(q^*)-s$ évaluée en $q^*=q^*_{CPP}$, on obtient :
+
+$$s^* = C_m(q^*_{CPP}) - R_m(q^*_{CPP}) = P(q^*_{CPP}) - R_m(q^*_{CPP})$$ {#eq-subv-opti}
+
+::: {#prp-subv-opti}
+## Subvention unitaire optimale
+
+La subvention unitaire qui rétablit l'optimum social est égale à **l'écart vertical entre la demande et la recette marginale**, mesuré à la quantité de concurrence pure et parfaite.
+
+Comme $R_m(q) = P(q) + qP'(q)$, elle vaut aussi :
+$$s^* = -q^*_{CPP}\,P'(q^*_{CPP}) > 0$$
+:::
+
+Cet écart est exactement ce qui sépare le monopole de la concurrence : en vendant une unité de plus, le monopole doit baisser son prix sur toutes les unités précédentes, ce qui lui coûte $-qP'(q)$ et le conduit à trop peu produire.
+La subvention lui rembourse précisément cette perte, unité par unité.
+
+En utilisant l'expression de la recette marginale de l'@eq-rm, on peut aussi écrire la subvention optimale en fonction de l'élasticité :
+$$\frac{s^*}{P(q^*_{CPP})}=\frac{1}{\left|\varepsilon_{q/p}(q^*_{CPP})\right|}$$
+On retrouve la même expression que l'indice de Lerner de l'@eq-Lerner, évaluée cette fois en $q^*_{CPP}$ : *plus la demande est inélastique, plus le monopole restreint sa production, et plus la subvention nécessaire est élevée.*
+
+```{r monopolesubventionoptimale}
+#| label: fig-mono-subv-opti
+#| fig-cap: "Subvention unitaire rétablissant l'optimum social."
+s_opt <- P(qcpp) - Rm(qcpp)
+
+ggplot() +
+  geom_function(fun=function(x) P(x), colour = "blue") +
+  geom_function(fun=function(x) Rm(x), colour = "green") +
+  geom_function(fun=function(x) Cm(x), colour="red") +
+  geom_function(fun=function(x) Rm(x)+s_opt, colour="darkgreen") +
+  labs(x="quantité", y = "prix") +
+  geom_segment(aes(x=0, y=P(qcpp), xend=qcpp, yend=P(qcpp)), linetype="dashed") +
+  geom_segment(aes(x=qcpp, y=Rm(qcpp), xend=qcpp, yend=P(qcpp)), colour="darkgreen", linewidth=1.1,
+               arrow=arrow(length=unit(0.02, "npc"), ends="both")) +
+  geom_text(aes(x=qcpp+0.05, y=0.25, label="s^'*'"), color="darkgreen", parse=TRUE, size=5) +
+  scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(P(qm), P(qcpp)), labels=c(expression(p[m]^"*"), expression(p[CPP]^"*"))) +
+  scale_x_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(qm, qcpp), labels=c(expression(q[m]^"*"), expression(q[CPP]^"*"))) +
+  geom_text(aes(x=0.80, y=P(0.80)+0.09, label="Demande~(P)"), color="blue", parse=TRUE) +
+  geom_text(aes(x=0.30, y=Rm(0.30)-0.09, label="Recette~marginale~(R[m])"), color="green", parse=TRUE) +
+  geom_text(aes(x=0.88, y=Cm(0.88)+0.09, label="Coût~marginal~(C[m])"), color="red", parse=TRUE) +
+  geom_text(aes(x=0.17, y=1.03, label="R[m]+s^'*'"), color="darkgreen", parse=TRUE)
+```
+
+La @fig-mono-subv-opti montre le résultat : la subvention relève la courbe de recette marginale jusqu'à ce qu'elle passe par le point d'équilibre de concurrence pure et parfaite.
+Ce n'est pas un hasard, c'est la traduction graphique de l'@eq-subv-opti : puisque $R_m(q^*_{CPP})+s^* = P(q^*_{CPP}) = C_m(q^*_{CPP})$, les trois courbes — demande, coût marginal, et recette marginale subventionnée — se coupent au même point.
+Le monopole, laissé libre de maximiser son profit, choisit alors $q^*_{CPP}$ et vend au prix $p^*_{CPP}$.
+La perte sèche disparaît.
+
+::: {#exm-subv-opti}
+## Subvention unitaire optimale
+
+Reprenons la demande inverse $P(q) = 1-q$ et le coût marginal $C_m(q)=q$ (soit $C(q)=q^2/2$), qui donnent $R_m(q) = 1-2q$.
+
+Sans régulation, le monopole égalise $1-2q = q$, soit :
+$$q^*_m = \frac{1}{3}, \qquad p^*_m = \frac{2}{3}, \qquad \pi(q^*_m)=\frac{1}{6}$$
+
+L'optimum social est en $P(q)=C_m(q)$, soit $1-q = q$ :
+$$q^*_{CPP} = \frac{1}{2}, \qquad p^*_{CPP} = \frac{1}{2}$$
+
+La subvention optimale de l'@eq-subv-opti vaut :
+$$s^* = P\left(\tfrac{1}{2}\right) - R_m\left(\tfrac{1}{2}\right) = \frac{1}{2} - 0 = \frac{1}{2}$$
+
+Vérification : avec cette subvention, le monopole égalise $R_m(q) = C_m(q)-s^*$, soit $1-2q = q - \tfrac{1}{2}$, ce qui donne bien $q^* = \tfrac{1}{2} = q^*_{CPP}$.
+
+Le profit du monopole subventionné vaut alors :
+$$\pi = R(q^*_{CPP}) - C(q^*_{CPP}) + s^*q^*_{CPP} = \frac{1}{4}-\frac{1}{8}+\frac{1}{4} = \frac{3}{8}$$
+:::
+
+##### Le coût de la subvention
+
+La subvention n'est pas gratuite : le régulateur verse au monopole
+$$S = s^*\,q^*_{CPP}$$
+Dans l'@exm-subv-opti, cela représente $S = \tfrac{1}{2}\times\tfrac{1}{2} = \tfrac{1}{4}$.
+
+Il faut donc financer cette dépense.
+Le régulateur ne peut pas le faire avec une taxe unitaire : celle-ci viendrait exactement compenser la subvention, puisque seul le solde net perçu par unité produite entre dans la décision du monopole.
+Il lui faut un instrument qui prélève des ressources **sans modifier la décision marginale** du producteur.
+C'est le cas des deux instruments qui suivent : la taxe forfaitaire et l'impôt sur les bénéfices.
 
 #### Taxe forfaitaire
 
 ::: {#def-t-forfaitaire}
 ## Taxe forfaitaire
 
-Une taxe forfaitaire est une taxe $T$ imposée au directement au producteur, indépendamment du prix ou de la quantité produite.
+Une taxe forfaitaire est une taxe $T$ imposée directement au producteur, indépendamment du prix ou de la quantité produite.
 :::
 
 Avec une taxe forfaitaire, le régulateur prélève un montant $T$ indépendant de la quantité produite sur le profit du producteur.
@@ -733,15 +820,64 @@ $$\pi(q) = R(q) - C(q) -T$$
 La condition du premier ordre de l'@eq-cpo devient alors :
 $$\begin{array}{crcl}
 & (R(q)-C(q) -T)'(q^*)& =& 0\\
-\Leftrightarrow & R_m(q^*)-C_m(q*)& =& 0\\
+\Leftrightarrow & R_m(q^*)-C_m(q^*)& =& 0\\
 \Leftrightarrow & R_m(q^*) &=& C_m(q^*)
 \end{array}$$
 On retrouve exactement la même condition d'optimalité qu'en l'absence de taxe.
 Si elle n'est pas trop élevée, une taxe forfaitaire n'a *aucune* influence sur la quantité produite et le prix.
 Si la taxe forfaitaire est très élevée, supérieure au profit à l'optimum ($\pi(q^*) <T$), le monopole préfère ne rien produire et le surplus social est nul.
 
+##### Financer la subvention par une taxe forfaitaire
+
+Puisqu'elle ne modifie pas la décision du monopole, la taxe forfaitaire est l'instrument naturel pour financer la subvention unitaire de l'@eq-subv-opti.
+Le régulateur équilibre son budget en prélevant exactement ce qu'il verse :
+$$T = S = s^*q^*_{CPP}$$ {#eq-T-financement}
+
+Le monopole continue alors de produire $q^*_{CPP}$ — la taxe forfaitaire ne change pas sa condition du premier ordre — et le budget du régulateur est équilibré.
+
+::: {#exm-financement}
+## Financement de la subvention
+
+Reprenons l'@exm-subv-opti, où $s^*=\tfrac{1}{2}$ et $q^*_{CPP}=\tfrac{1}{2}$.
+La subvention coûte :
+$$S = \frac{1}{2}\times\frac{1}{2} = \frac{1}{4}$$
+
+La taxe forfaitaire doit donc valoir $T=\tfrac{1}{4}$.
+Elle est réalisable, car elle reste inférieure au profit du monopole subventionné, qui vaut $\tfrac{3}{8}$ :
+$$T = \frac{1}{4} \leq \frac{3}{8} = \pi(q^*_{CPP})$$
+
+Le profit net du monopole après subvention et taxe vaut :
+$$\frac{3}{8}-\frac{1}{4} = \frac{1}{8} > 0$$
+Le monopole continue donc de produire.
+:::
+
+Le profit net obtenu dans l'@exm-financement n'est pas un nombre quelconque.
+En remplaçant $T$ par sa valeur de l'@eq-T-financement, le profit du monopole régulé s'écrit :
+$$\pi_{\text{net}} = \underbrace{R(q^*_{CPP}) - C(q^*_{CPP}) + s^*q^*_{CPP}}_{\text{profit avec subvention}} - \underbrace{s^*q^*_{CPP}}_{T} = R(q^*_{CPP}) - C(q^*_{CPP})$$
+
+Autrement dit, **le monopole se retrouve avec le profit qu'il ferait en vendant $q^*_{CPP}$ au prix $p^*_{CPP}$, sans subvention ni taxe** : le couple subvention/taxe forfaitaire ne fait que déplacer sa production, il ne lui laisse rien de plus.
+On en tire deux conséquences.
+
+::: {#prp-participation-subv}
+## Contrainte de participation du monopole régulé
+
+Le monopole n'accepte de produire que si $\pi_{\text{net}}\geq 0$, c'est-à-dire :
+$$R(q^*_{CPP}) \geq C(q^*_{CPP}) \Leftrightarrow p^*_{CPP} \geq C_M(q^*_{CPP})$$
+
+Le dispositif n'est donc réalisable que si le prix de concurrence pure et parfaite couvre le **coût moyen** à la quantité de concurrence pure et parfaite.
+:::
+
+C'est exactement la condition qui **échoue** dans le cas du monopole naturel : quand le coût moyen est décroissant, il est supérieur au coût marginal, donc $p^*_{CPP}=C_m(q^*_{CPP})<C_M(q^*_{CPP})$.
+La subvention ne peut alors plus être financée par le monopole lui-même, et il faut la financer par l'impôt général — c'est la solution évoquée en @sec-regul-naturel.
+
 ::: remark
-Le régulateur peut envisager de combiner une subvention unitaire au monopole combinée à une taxe forfaitaire pour augmenter le surplus social.
+Le monopole régulé est toujours *perdant* par rapport au monopole non régulé.
+En effet $\pi_{\text{net}}=R(q^*_{CPP}) - C(q^*_{CPP})$, alors que le profit de monopole $\pi(q^*_m)=R(q^*_m)-C(q^*_m)$ est, par définition, le **maximum** de cette même fonction.
+Comme $q^*_{CPP}\neq q^*_m$, on a nécessairement $\pi_{\text{net}}<\pi(q^*_m)$.
+
+Le monopole ne mettra donc jamais ce dispositif en place de lui-même : c'est bien une contrainte imposée par le régulateur.
+En revanche, le surplus des consommateurs augmente davantage que le profit ne diminue, et comme le budget du régulateur est équilibré, le surplus total augmente exactement de la perte sèche du monopole.
+Dans l'@exm-financement, les consommateurs gagnent $\tfrac{5}{72}$, le monopole perd $\tfrac{3}{72}$, et le surplus total augmente de $\tfrac{2}{72}=\tfrac{1}{36}$, qui est précisément la perte sèche de la @fig-mono-surplus.
 :::
 
 #### Impôt sur les bénéfices (profit)
@@ -766,7 +902,29 @@ $$\begin{array}{crcl}
 \end{array}$$
 
 Comme pour la taxe forfaitaire, le comportement du monopole n'est pas modifié par un impôt sur les bénéfices.
-On peut donc aussi envisager une subvention à la production et une taxe proportionnelle sur le profit.
+
+##### Financer la subvention par un impôt sur les bénéfices
+
+L'impôt sur les bénéfices étant lui aussi neutre, il peut également financer la subvention.
+Le régulateur choisit cette fois le *taux* $t$ qui lui rapporte le montant $S$ :
+$$t\,\pi(q^*_{CPP}) = S = s^*q^*_{CPP} \quad\Leftrightarrow\quad t^* = \frac{s^*q^*_{CPP}}{R(q^*_{CPP}) - C(q^*_{CPP}) + s^*q^*_{CPP}}$$
+
+où le profit imposé $\pi(q^*_{CPP})$ inclut bien la subvention reçue, qui fait partie des recettes du monopole.
+
+Dans l'@exm-financement, cela donne :
+$$t^* = \frac{1/4}{3/8} = \frac{2}{3}$$
+
+Le monopole conserve $(1-t^*)\pi(q^*_{CPP}) = \tfrac{1}{3}\times\tfrac{3}{8}=\tfrac{1}{8}$, c'est-à-dire exactement ce que lui laissait la taxe forfaitaire : à montant prélevé identique, les deux instruments sont équivalents.
+
+::: remark
+Les deux instruments ne se valent cependant pas du point de vue de l'information dont dispose le régulateur.
+
+- La taxe forfaitaire $T$ est fixée *à l'avance*, en montant. Si le régulateur surestime le profit du monopole et fixe $T>\pi(q^*_{CPP})$, le monopole préfère fermer et le surplus social devient nul.
+- Le taux $t$ s'applique au profit *réalisé*. Tant que $t<1$, le profit net $(1-t)\pi$ reste positif : l'impôt sur les bénéfices ne peut jamais provoquer la fermeture du monopole.
+
+En contrepartie, l'impôt sur les bénéfices suppose que le régulateur puisse observer et vérifier le profit du monopole, ce qui est en pratique bien plus difficile que de prélever une somme fixe.
+La condition de réalisabilité $t^*\leq 1$ est en revanche la même que pour la taxe forfaitaire : il faut que $S\leq\pi(q^*_{CPP})$.
+:::
 
 ### Prix maximal
 
@@ -858,7 +1016,7 @@ Trois situations sont possibles avec un prix maximal :
 3.  S'il est inférieur au prix de CPP et donc de monopole ($p^*_{CPP}> p^{max}$), alors la quantité produite diminue quand le prix maximal augmente.
 :::
 
-### Régulation du monopole naturel
+### Régulation du monopole naturel {#sec-regul-naturel}
 
 Dans le cas d'un monopole naturel, le coût marginal est inférieur au coût moyen à l'optimum.
 Une régulation qui maximise le surplus total est une régulation qui fait en sorte que la quantité produite est celle produite en concurrence pure et parfaite.
