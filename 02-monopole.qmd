@@ -46,8 +46,7 @@ Si, au contraire, il choisit $p^*$, la quantité échangée $q^*$ sera détermin
 En CPP, la recette totale du producteur individuel était $R(q) = q\cdot P(q^*)$, où $q$ est sa production individuel, $q^*$ la quantité d'équilibre sur le marché (résultat de la production de *toutes* les entreprises présentes sur le marché) et $P(q^*)=p^*$ est le prix d'équilibre.
 
 En monopole, le prix dépend de la production du monopole (ou l'inverse, peu importe).
-La recette totale du monopole s'écrit donc :
-$$R(q) = q\cdot P(q) \text{ ou } R(p)= Q(p)\cdot p$$
+La recette totale du monopole s'écrit donc : $$R(q) = q\cdot P(q) \text{ ou } R(p)= Q(p)\cdot p$$
 
 ### Recette marginale et courbe de demande
 
@@ -129,8 +128,7 @@ R_m(q)& = R'(q) \\
 & = P(q)\left(1 + \frac{1}{\varepsilon_{q/p}(q)}\right)
 \end{align*}
 
-On peut donc écrire :
-$$R_m(q) = P(q)\left(1 - \frac{1}{|\varepsilon_{q/p}(q)|}\right)$$ {#eq-rm}
+On peut donc écrire : $$R_m(q) = P(q)\left(1 - \frac{1}{|\varepsilon_{q/p}(q)|}\right)$$ {#eq-rm}
 
 ::: {#prp-elasticite}
 ## Élasticité prix de la demande et recette marginale
@@ -166,8 +164,7 @@ p2 + geom_segment(x=0, y=0, xend = 0.5, yend = 0.5, linetype="dashed") +
 
 ### Représentation graphique
 
-La courbe de recette marginale est toujours située en-dessous de la courbe de demande, en effet :
-$$R_m(q) = P(q) + qP'(q) < P(q)$$
+La courbe de recette marginale est toujours située en-dessous de la courbe de demande, en effet : $$R_m(q) = P(q) + qP'(q) < P(q)$$
 
 car $P'(q)$ est négative (la demande inverse est décroissante).
 
@@ -235,8 +232,7 @@ Sur la @fig-mono-profit, on voit qu'il est possible de calculer la recette total
 Comme en CPP, le producteur, ici en situation de monopole, cherche à maximiser son profit $\pi(q)=R(q)-C(q)$, où $C(q)$ est la fonction de coût (total) du monopole.\
 Il y a 2 conditions d'optimalités, les conditions de premier ordre (la dérivée du profit à l'optimum est nulle : $\pi'(q^*)=0$) et de second ordre (la dérivée seconde du profit à l'optimum est strictement négative $\pi''(q^*)<0$), ainsi qu'une contrainte, que le profit à l'optimum soit positif ($\pi(q^*)\geq 0$).
 
-La condition de premier ordre s'exprime ainsi :
-$$\begin{array}{rcl}
+La condition de premier ordre s'exprime ainsi : $$\begin{array}{rcl}
 \pi'(q^*) &=&0\\
 \Leftrightarrow R'(q^*) - C'(q^*) &=& 0\\
 \Leftrightarrow R_m(q^*) &=&C_m(q^*) 
@@ -246,8 +242,7 @@ $$\begin{array}{rcl}
 Cette condition est similaire en apparence à la condition d'optimalité en CPP.
 La différence réside en fait dans l'expression de la recette marginale, telle que vue en @sec-rm.
 
-La condition du second ordre s'exprime ainsi :
-$$\begin{array}{rcl}
+La condition du second ordre s'exprime ainsi : $$\begin{array}{rcl}
 \pi''(q^*) &<&0\\
 \Leftrightarrow R_m'(q^*) - C_m'(q^*) &<& 0\\
 \Leftrightarrow R_m'(q^*) &<& C_m'(q^*)
@@ -266,9 +261,7 @@ Dans le cas contraire, le marché n'existerait pas, car le monopole ne produirai
 À l'optimum, le monopole égalise le coût marginal et le revenu marginal.
 Ce n'est un maximum que si la dérivée de la recette marginale est inférieure à la dérivée du coût marginal et que le profit est positif.
 
-$$R_m(q^*)=C_m(q^*) $$ {#eq-cpo}
-$$R_m'(q^*) <C_m'(q^*)$$ {#eq-cso}
-$$\pi(q^*)\geq0 $$ {#eq-profitpos}
+$$R_m(q^*)=C_m(q^*) $$ {#eq-cpo} $$R_m'(q^*) <C_m'(q^*)$$ {#eq-cso} $$\pi(q^*)\geq0 $$ {#eq-profitpos}
 :::
 
 La @fig-monopoleoptimale donne l'intuition graphique de l'égalité entre le coût marginal et la recette marginale.
@@ -307,22 +300,13 @@ Le prix est lu et obtenu sur la courbe de **demande**.
 Prenons un monopole avec une fonction de coût $C(q)=50+q^2$.
 Le monopole fait face à une demande inverse $P(q) = 40-q$.
 
-Le coût marginal est :
-$$C_m(q) = C'(q)=2q$$
+Le coût marginal est : $$C_m(q) = C'(q)=2q$$
 
-La recette totale est :
-$$R(q) = qP(q) = q(40-q) = 40q-q^2$$
-La recette marginale est donc :
-$$R_m(q) = R'(q) = 40 - 2q$$
-Le profit vaut :
-$$\pi(q) = R(q)-C(q)$$
-Conformément à l'@eq-cpo, il est maximal lorsque :
-$$\begin{array}{rcl}
+La recette totale est : $$R(q) = qP(q) = q(40-q) = 40q-q^2$$ La recette marginale est donc : $$R_m(q) = R'(q) = 40 - 2q$$ Le profit vaut : $$\pi(q) = R(q)-C(q)$$ Conformément à l'@eq-cpo, il est maximal lorsque : $$\begin{array}{rcl}
 R_m(q^*) &=&C_m(q^*)\\
 \Leftrightarrow 40 -2q &= &2q\\
 \Leftrightarrow q^*&=&10
-\end{array}$$
-La condition de second ordre de l'@eq-cso est bien vérifiée, car $-2<2$.
+\end{array}$$ La condition de second ordre de l'@eq-cso est bien vérifiée, car $-2<2$.
 
 Le prix de vente vaut : $$P(q^*) = P(10) = 40-10 = 30$$
 
@@ -388,15 +372,11 @@ p7
 
 ### Propriétés de la solution du monopole
 
-On avait dans l'@eq-rm :
-$$R_m(q) = P(q)\left(1 - \frac{1}{|\varepsilon_{q/p}(q)|}\right)$$
-Comme à l'optimum, d'après l'@eq-cpo, on doit avoir $R_m(q^*)=C_m(q^*)$, on a :
-$$R_m(q^*) = P(q^*)\left(1 - \frac{1}{|\varepsilon_{q/p}(q^*)|}\right) = C_m(q^*) $$ {#eq-rmcm}
+On avait dans l'@eq-rm : $$R_m(q) = P(q)\left(1 - \frac{1}{|\varepsilon_{q/p}(q)|}\right)$$ Comme à l'optimum, d'après l'@eq-cpo, on doit avoir $R_m(q^*)=C_m(q^*)$, on a : $$R_m(q^*) = P(q^*)\left(1 - \frac{1}{|\varepsilon_{q/p}(q^*)|}\right) = C_m(q^*) $$ {#eq-rmcm}
 
 On observe ici un lien avec la solution en CPP.
 En effet, en CPP, l'élasticité de la demande au prix est perçue comme infinie, on aura donc bien $P(q^*) = C_m(q^*)$, la solution obtenue en CPP.
-Dès lors que l'élasticité de la demande au prix n'est plus infinie en revanche, on obtient :
-$$ P(q^*)=\frac{C_m(q^*)}{1 - \frac{1}{\left|\varepsilon_{q/p}(q^*)\right|}} > C_m(q^*)$$
+Dès lors que l'élasticité de la demande au prix n'est plus infinie en revanche, on obtient : $$ P(q^*)=\frac{C_m(q^*)}{1 - \frac{1}{\left|\varepsilon_{q/p}(q^*)\right|}} > C_m(q^*)$$
 
 *Question :* Dans quelle zone d'élasticité le monopole opère-t-il ?
 
@@ -422,9 +402,7 @@ Le pouvoir de marché d'un producteur est sa capacité à élever son prix au-de
 
 La capacité du monopole à vendre à un prix supérieur au coût marginal dépend de la plus ou moins grande élasticité de la demande au prix.
 Cela permet de construire un indice du *pouvoir de monopole* à partir de l'élasticité du prix à la demande à l'équilibre.
-On a, d'après l'@eq-rmcm :
-$$R_m(q^*) = P(q^*)\left(1 - \frac{1}{|\varepsilon_{q/p}(q^*)|}\right) = C_m(q^*) $$
-On en déduit :
+On a, d'après l'@eq-rmcm : $$R_m(q^*) = P(q^*)\left(1 - \frac{1}{|\varepsilon_{q/p}(q^*)|}\right) = C_m(q^*) $$ On en déduit :
 
 $$\begin{array}{rl}
 & C_m(q^*) = P(q^*) - \frac{P(q^*)}{|\varepsilon_{q/p}(q^*)|}\\
@@ -434,8 +412,7 @@ $$\begin{array}{rl}
 ::: {#def-Lerner}
 ## Indice de Lerner
 
-L'indice de Lerner $L$ mesure la capacité d'un monopole à vendre au-dessus de son prix marginal :
-$$L=\frac{P(q^*) - C_m(q^*)}{P(q^*)} $$ {#eq-Lerner}
+L'indice de Lerner $L$ mesure la capacité d'un monopole à vendre au-dessus de son prix marginal : $$L=\frac{P(q^*) - C_m(q^*)}{P(q^*)} $$ {#eq-Lerner}
 :::
 
 D'après les calculs précédents, l'indice de Lerner est inversement proportionnel à l'élasticité prix de la demande.
@@ -541,15 +518,11 @@ Une situation de monopole est dite *naturelle* si le monopole émerge à cause d
 ::: {#def-rdts-echelles}
 ## Rendements d'échelles
 
-Les *rendements d'échelles* sont croissants lorsque la technologie de production $f$ est telle que :
-$$f(\lambda z_1, \lambda z_2, ...\lambda z_n) > \lambda f(z_1,z_2, ..., z_n)$$
-où les $z_i$ sont les facteurs de productions.
+Les *rendements d'échelles* sont croissants lorsque la technologie de production $f$ est telle que : $$f(\lambda z_1, \lambda z_2, ...\lambda z_n) > \lambda f(z_1,z_2, ..., z_n)$$ où les $z_i$ sont les facteurs de productions.
 En mots : une entreprise utilisant $\lambda$ fois plus de facteurs de productions qu'une petite entreprise produit plus que $\lambda$ petites entreprises réunies.
 :::
 
-Une conséquence des rendements d'échelle croissants est que le coût moyen est décroissant :
-$$C_M(f(\lambda z)) =\frac{\lambda z\cdot w_z}{f(\lambda z)} < C_M(\lambda f(z)) = \frac{\lambda z\cdot w_z}{\lambda f(z)}$$
-car $f(\lambda z)>\lambda f(z)$.
+Une conséquence des rendements d'échelle croissants est que le coût moyen est décroissant : $$C_M(f(\lambda z)) =\frac{\lambda z\cdot w_z}{f(\lambda z)} < C_M(\lambda f(z)) = \frac{\lambda z\cdot w_z}{\lambda f(z)}$$ car $f(\lambda z)>\lambda f(z)$.
 Cela signifie qu'une seule entreprise qui produit $f(\lambda z)$ est plus efficace que $\lambda$ entreprises qui produisent $\lambda f(z)$.
 Il y a ici des économies d'échelle.
 
@@ -611,10 +584,8 @@ Lorsque le coût moyen est décroissant, c'est que le coût marginal est inféri
 
 $$C_M(q) = \frac{C(q)}{q}$$
 
-$$C_M'(q) =\frac{C'(q)q-C(q)}{q^2} = \frac{C_m(q)-C_M(q)}{q}$$
-Or $C_M'(q)<0$, comme le coût moyen est décroissant.
-On en déduit donc que :
-$$C_m(q)-C_M(q)< 0 \Leftrightarrow C_m(q)<C_M(q)$$
+$$C_M'(q) =\frac{C'(q)q-C(q)}{q^2} = \frac{C_m(q)-C_M(q)}{q}$$ Or $C_M'(q)<0$, comme le coût moyen est décroissant.
+On en déduit donc que : $$C_m(q)-C_M(q)< 0 \Leftrightarrow C_m(q)<C_M(q)$$
 :::
 
 ::: remark
@@ -668,8 +639,7 @@ Si le régulateur verse $s$ unités monétaires par unité de bien produite, le 
 
 $$\pi(q) = R(q) - C(q) + sq$$
 
-La condition du premier ordre de l'@eq-cpo devient :
-$$\begin{array}{crcl}
+La condition du premier ordre de l'@eq-cpo devient : $$\begin{array}{crcl}
 &(R(q)-C(q) +sq)'(q^*) &=& 0\\
 \Leftrightarrow & R_m(q^*)-C_m(q^*) +s &=& 0\\
 \Leftrightarrow & R_m(q^*)& = &C_m(q^*) - s
@@ -703,8 +673,7 @@ p_subvunitaire +
 Cela entraîne une augmentation de la quantité produite et une diminution du prix, donc une hausse du surplus des consommateurs.
 C'est l'effet inverse de celui d'une taxe unitaire, qui correspondrait à $s<0$ : elle relèverait le coût marginal perçu, réduirait la quantité et augmenterait le prix.
 
-Une vision **alternative** à la diminution du coût marginal est de considérer que la subvention augmente la recette marginale de $s$ :
-$$R_m(q^*) + s = C_m(q^*)$$
+Une vision **alternative** à la diminution du coût marginal est de considérer que la subvention augmente la recette marginale de $s$ : $$R_m(q^*) + s = C_m(q^*)$$
 
 Le monopole vend chaque unité au prix $P(q)$ et reçoit en plus $s$ du régulateur : il perçoit donc en réalité une demande $P(q)+s$, et la recette marginale qui lui correspond est $R_m(q)+s$.
 
@@ -736,16 +705,13 @@ $$s^* = C_m(q^*_{CPP}) - R_m(q^*_{CPP}) = P(q^*_{CPP}) - R_m(q^*_{CPP})$$ {#eq-s
 
 La subvention unitaire qui rétablit l'optimum social est égale à **l'écart vertical entre la demande et la recette marginale**, mesuré à la quantité de concurrence pure et parfaite.
 
-Comme $R_m(q) = P(q) + qP'(q)$, elle vaut aussi :
-$$s^* = -q^*_{CPP}\,P'(q^*_{CPP}) > 0$$
+Comme $R_m(q) = P(q) + qP'(q)$, elle vaut aussi : $$s^* = -q^*_{CPP}\,P'(q^*_{CPP}) > 0$$
 :::
 
 Cet écart est exactement ce qui sépare le monopole de la concurrence : en vendant une unité de plus, le monopole doit baisser son prix sur toutes les unités précédentes, ce qui lui coûte $-qP'(q)$ et le conduit à trop peu produire.
 La subvention lui rembourse précisément cette perte, unité par unité.
 
-En utilisant l'expression de la recette marginale de l'@eq-rm, on peut aussi écrire la subvention optimale en fonction de l'élasticité :
-$$\frac{s^*}{P(q^*_{CPP})}=\frac{1}{\left|\varepsilon_{q/p}(q^*_{CPP})\right|}$$
-On retrouve la même expression que l'indice de Lerner de l'@eq-Lerner, évaluée cette fois en $q^*_{CPP}$ : *plus la demande est inélastique, plus le monopole restreint sa production, et plus la subvention nécessaire est élevée.*
+En utilisant l'expression de la recette marginale de l'@eq-rm, on peut aussi écrire la subvention optimale en fonction de l'élasticité : $$\frac{s^*}{P(q^*_{CPP})}=\frac{1}{\left|\varepsilon_{q/p}(q^*_{CPP})\right|}$$ On retrouve la même expression que l'indice de Lerner de l'@eq-Lerner, évaluée cette fois en $q^*_{CPP}$ : *plus la demande est inélastique, plus le monopole restreint sa production, et plus la subvention nécessaire est élevée.*
 
 ```{r monopolesubventionoptimale}
 #| label: fig-mono-subv-opti
@@ -780,26 +746,20 @@ La perte sèche disparaît.
 
 Reprenons la demande inverse $P(q) = 1-q$ et le coût marginal $C_m(q)=q$ (soit $C(q)=q^2/2$), qui donnent $R_m(q) = 1-2q$.
 
-Sans régulation, le monopole égalise $1-2q = q$, soit :
-$$q^*_m = \frac{1}{3}, \qquad p^*_m = \frac{2}{3}, \qquad \pi(q^*_m)=\frac{1}{6}$$
+Sans régulation, le monopole égalise $1-2q = q$, soit : $$q^*_m = \frac{1}{3}, \qquad p^*_m = \frac{2}{3}, \qquad \pi(q^*_m)=\frac{1}{6}$$
 
-L'optimum social est en $P(q)=C_m(q)$, soit $1-q = q$ :
-$$q^*_{CPP} = \frac{1}{2}, \qquad p^*_{CPP} = \frac{1}{2}$$
+L'optimum social est en $P(q)=C_m(q)$, soit $1-q = q$ : $$q^*_{CPP} = \frac{1}{2}, \qquad p^*_{CPP} = \frac{1}{2}$$
 
-La subvention optimale de l'@eq-subv-opti vaut :
-$$s^* = P\left(\tfrac{1}{2}\right) - R_m\left(\tfrac{1}{2}\right) = \frac{1}{2} - 0 = \frac{1}{2}$$
+La subvention optimale de l'@eq-subv-opti vaut : $$s^* = P\left(\tfrac{1}{2}\right) - R_m\left(\tfrac{1}{2}\right) = \frac{1}{2} - 0 = \frac{1}{2}$$
 
 Vérification : avec cette subvention, le monopole égalise $R_m(q) = C_m(q)-s^*$, soit $1-2q = q - \tfrac{1}{2}$, ce qui donne bien $q^* = \tfrac{1}{2} = q^*_{CPP}$.
 
-Le profit du monopole subventionné vaut alors :
-$$\pi = R(q^*_{CPP}) - C(q^*_{CPP}) + s^*q^*_{CPP} = \frac{1}{4}-\frac{1}{8}+\frac{1}{4} = \frac{3}{8}$$
+Le profit du monopole subventionné vaut alors : $$\pi = R(q^*_{CPP}) - C(q^*_{CPP}) + s^*q^*_{CPP} = \frac{1}{4}-\frac{1}{8}+\frac{1}{4} = \frac{3}{8}$$
 :::
 
 ##### Le coût de la subvention
 
-La subvention n'est pas gratuite : le régulateur verse au monopole
-$$S = s^*\,q^*_{CPP}$$
-Dans l'@exm-subv-opti, cela représente $S = \tfrac{1}{2}\times\tfrac{1}{2} = \tfrac{1}{4}$.
+La subvention n'est pas gratuite : le régulateur verse au monopole $$S = s^*\,q^*_{CPP}$$ Dans l'@exm-subv-opti, cela représente $S = \tfrac{1}{2}\times\tfrac{1}{2} = \tfrac{1}{4}$.
 
 Il faut donc financer cette dépense.
 Le régulateur ne peut pas le faire avec une taxe unitaire : celle-ci viendrait exactement compenser la subvention, puisque seul le solde net perçu par unité produite entre dans la décision du monopole.
@@ -816,22 +776,18 @@ Une taxe forfaitaire est une taxe $T$ imposée directement au producteur, indép
 
 Avec une taxe forfaitaire, le régulateur prélève un montant $T$ indépendant de la quantité produite sur le profit du producteur.
 
-$$\pi(q) = R(q) - C(q) -T$$
-La condition du premier ordre de l'@eq-cpo devient alors :
-$$\begin{array}{crcl}
+$$\pi(q) = R(q) - C(q) -T$$ La condition du premier ordre de l'@eq-cpo devient alors : $$\begin{array}{crcl}
 & (R(q)-C(q) -T)'(q^*)& =& 0\\
 \Leftrightarrow & R_m(q^*)-C_m(q^*)& =& 0\\
 \Leftrightarrow & R_m(q^*) &=& C_m(q^*)
-\end{array}$$
-On retrouve exactement la même condition d'optimalité qu'en l'absence de taxe.
+\end{array}$$ On retrouve exactement la même condition d'optimalité qu'en l'absence de taxe.
 Si elle n'est pas trop élevée, une taxe forfaitaire n'a *aucune* influence sur la quantité produite et le prix.
 Si la taxe forfaitaire est très élevée, supérieure au profit à l'optimum ($\pi(q^*) <T$), le monopole préfère ne rien produire et le surplus social est nul.
 
 ##### Financer la subvention par une taxe forfaitaire
 
 Puisqu'elle ne modifie pas la décision du monopole, la taxe forfaitaire est l'instrument naturel pour financer la subvention unitaire de l'@eq-subv-opti.
-Le régulateur équilibre son budget en prélevant exactement ce qu'il verse :
-$$T = S = s^*q^*_{CPP}$$ {#eq-T-financement}
+Le régulateur équilibre son budget en prélevant exactement ce qu'il verse : $$T = S = s^*q^*_{CPP}$$ {#eq-T-financement}
 
 Le monopole continue alors de produire $q^*_{CPP}$ — la taxe forfaitaire ne change pas sa condition du premier ordre — et le budget du régulateur est équilibré.
 
@@ -839,30 +795,24 @@ Le monopole continue alors de produire $q^*_{CPP}$ — la taxe forfaitaire ne ch
 ## Financement de la subvention
 
 Reprenons l'@exm-subv-opti, où $s^*=\tfrac{1}{2}$ et $q^*_{CPP}=\tfrac{1}{2}$.
-La subvention coûte :
-$$S = \frac{1}{2}\times\frac{1}{2} = \frac{1}{4}$$
+La subvention coûte : $$S = \frac{1}{2}\times\frac{1}{2} = \frac{1}{4}$$
 
 La taxe forfaitaire doit donc valoir $T=\tfrac{1}{4}$.
-Elle est réalisable, car elle reste inférieure au profit du monopole subventionné, qui vaut $\tfrac{3}{8}$ :
-$$T = \frac{1}{4} \leq \frac{3}{8} = \pi(q^*_{CPP})$$
+Elle est réalisable, car elle reste inférieure au profit du monopole subventionné, qui vaut $\tfrac{3}{8}$ : $$T = \frac{1}{4} \leq \frac{3}{8} = \pi(q^*_{CPP})$$
 
-Le profit net du monopole après subvention et taxe vaut :
-$$\frac{3}{8}-\frac{1}{4} = \frac{1}{8} > 0$$
-Le monopole continue donc de produire.
+Le profit net du monopole après subvention et taxe vaut : $$\frac{3}{8}-\frac{1}{4} = \frac{1}{8} > 0$$ Le monopole continue donc de produire.
 :::
 
 Le profit net obtenu dans l'@exm-financement n'est pas un nombre quelconque.
-En remplaçant $T$ par sa valeur de l'@eq-T-financement, le profit du monopole régulé s'écrit :
-$$\pi_{\text{net}} = \underbrace{R(q^*_{CPP}) - C(q^*_{CPP}) + s^*q^*_{CPP}}_{\text{profit avec subvention}} - \underbrace{s^*q^*_{CPP}}_{T} = R(q^*_{CPP}) - C(q^*_{CPP})$$
+En remplaçant $T$ par sa valeur de l'@eq-T-financement, le profit du monopole régulé s'écrit : $$\pi_{\text{net}} = \underbrace{R(q^*_{CPP}) - C(q^*_{CPP}) + s^*q^*_{CPP}}_{\text{profit avec subvention}} - \underbrace{s^*q^*_{CPP}}_{T} = R(q^*_{CPP}) - C(q^*_{CPP})$$
 
-Autrement dit, **le monopole se retrouve avec le profit qu'il ferait en vendant $q^*_{CPP}$ au prix $p^*_{CPP}$, sans subvention ni taxe** : le couple subvention/taxe forfaitaire ne fait que déplacer sa production, il ne lui laisse rien de plus.
+Autrement dit, **le monopole se retrouve avec le profit qu'il ferait en vendant** $q^*_{CPP}$ au prix $p^*_{CPP}$, sans subvention ni taxe : le couple subvention/taxe forfaitaire ne fait que déplacer sa production, il ne lui laisse rien de plus.
 On en tire deux conséquences.
 
 ::: {#prp-participation-subv}
 ## Contrainte de participation du monopole régulé
 
-Le monopole n'accepte de produire que si $\pi_{\text{net}}\geq 0$, c'est-à-dire :
-$$R(q^*_{CPP}) \geq C(q^*_{CPP}) \Leftrightarrow p^*_{CPP} \geq C_M(q^*_{CPP})$$
+Le monopole n'accepte de produire que si $\pi_{\text{net}}\geq 0$, c'est-à-dire : $$R(q^*_{CPP}) \geq C(q^*_{CPP}) \Leftrightarrow p^*_{CPP} \geq C_M(q^*_{CPP})$$
 
 Le dispositif n'est donc réalisable que si le prix de concurrence pure et parfaite couvre le **coût moyen** à la quantité de concurrence pure et parfaite.
 :::
@@ -892,10 +842,7 @@ Le régulateur impose au monopole de payer un pourcentage de ses profits en imp�
 :::
 
 Au lieu de taxer chaque unité produite, le régulateur taxe le niveau de profit à un taux $t$.
-Le profit s'écrit :
-$$\pi(q) = R(q) - C(q) -t(R(q) - C(q)) = (1-t)(R(q) - C(q))$$
-La condition du premier ordre de l'@eq-cpo devient alors :
-$$\begin{array}{crcl}
+Le profit s'écrit : $$\pi(q) = R(q) - C(q) -t(R(q) - C(q)) = (1-t)(R(q) - C(q))$$ La condition du premier ordre de l'@eq-cpo devient alors : $$\begin{array}{crcl}
 &((1-t)(R(q)-C(q)))'(q^*) &=& 0\\
 \Leftrightarrow & (1-t)(R_m(q^*)-C_m(q^*)) &=& 0\\
 \Leftrightarrow & R_m(q^*) &=& C_m(q^*)
@@ -906,13 +853,11 @@ Comme pour la taxe forfaitaire, le comportement du monopole n'est pas modifié p
 ##### Financer la subvention par un impôt sur les bénéfices
 
 L'impôt sur les bénéfices étant lui aussi neutre, il peut également financer la subvention.
-Le régulateur choisit cette fois le *taux* $t$ qui lui rapporte le montant $S$ :
-$$t\,\pi(q^*_{CPP}) = S = s^*q^*_{CPP} \quad\Leftrightarrow\quad t^* = \frac{s^*q^*_{CPP}}{R(q^*_{CPP}) - C(q^*_{CPP}) + s^*q^*_{CPP}}$$
+Le régulateur choisit cette fois le *taux* $t$ qui lui rapporte le montant $S$ : $$t\,\pi(q^*_{CPP}) = S = s^*q^*_{CPP} \quad\Leftrightarrow\quad t^* = \frac{s^*q^*_{CPP}}{R(q^*_{CPP}) - C(q^*_{CPP}) + s^*q^*_{CPP}}$$
 
 où le profit imposé $\pi(q^*_{CPP})$ inclut bien la subvention reçue, qui fait partie des recettes du monopole.
 
-Dans l'@exm-financement, cela donne :
-$$t^* = \frac{1/4}{3/8} = \frac{2}{3}$$
+Dans l'@exm-financement, cela donne : $$t^* = \frac{1/4}{3/8} = \frac{2}{3}$$
 
 Le monopole conserve $(1-t^*)\pi(q^*_{CPP}) = \tfrac{1}{3}\times\tfrac{3}{8}=\tfrac{1}{8}$, c'est-à-dire exactement ce que lui laissait la taxe forfaitaire : à montant prélevé identique, les deux instruments sont équivalents.
 
@@ -1062,19 +1007,14 @@ Le consommateur n'obtient aucun surplus, la *totalité* du surplus est capturé 
 *Question :* Quel va être le niveau de production du monopole ?
 
 Comme le monopole fait payer chaque unité à la valorisation du consommateur, la première unité est vendue au prix P(1), la deuxième au prix P(2), etc.
-La recette totale est donc :
-$$R(q) = \int_0^q P(x) dx$$
+La recette totale est donc : $$R(q) = \int_0^q P(x) dx$$
 
-Le profit est :
-$$\pi(q) = R(q) - C(q) = \int_0^q P(x) dx -C(q)$$
-La condition du premier ordre s'écrit donc :
-$$\begin{array}{rl}
+Le profit est : $$\pi(q) = R(q) - C(q) = \int_0^q P(x) dx -C(q)$$ La condition du premier ordre s'écrit donc : $$\begin{array}{rl}
 &\frac{d\pi(q^*)}{dq} = 0\\
 \Leftrightarrow & \frac{d\int_0^{q^*} P(x) dx -C(q^*)}{dq} = 0\\
 \Leftrightarrow & P(q^*) - C_m(q^*) = 0\\
 \Leftrightarrow & P(q^*) = C_m(q^*)
-\end{array}$$
-La recette marginale est ici confondue avec la courbe de demande.
+\end{array}$$ La recette marginale est ici confondue avec la courbe de demande.
 L'optimum se trouve donc au point où la courbe de coût marginal coupe la courbe de demande (inverse).
 C'est la même condition qu'en CPP.
 Le monopole parfaitement discriminant produit donc la quantité de concurrence pure et parfaite.
@@ -1250,18 +1190,14 @@ $$V_2(q_2) - T_2 \geq V_2(q_1) - T_1 \tag{CI$_2$}$$
 
 Résoudre le programme revient à déterminer *lesquelles* de ces quatre contraintes sont saturées (vérifiées avec égalité) à l'optimum.
 
-
 - **(CP**$_1$) est saturée.
   Si le type 1 conservait un surplus strictement positif, le monopoleur pourrait augmenter *simultanément* $T_1$ et $T_2$ d'un même petit montant : les deux contraintes d'incitation, qui ne portent que sur des *différences* de tarifs, sont préservées, et le profit augmente.
-  Il continue jusqu'à ce que le surplus du type 1 soit nul :
-  $$T_1 = V_1(q_1).$$
+  Il continue jusqu'à ce que le surplus du type 1 soit nul : $$T_1 = V_1(q_1).$$
 
 - **(CI**$_2$) est saturée.
   Une fois $T_1$ fixé à $V_1\left(q_1\right)$, le monopoleur augmente $T_2$ autant que possible pour extraire le surplus du type 2.
   Il est arrêté par la contrainte d'incitation du type 2 : au-delà, le type 2 préférerait choisir le menu 1.
-  À l'optimum le type 2 est donc *indifférent* entre les deux menus :
-  $$V_2(q_2) - T_2 = V_2(q_1) - T_1 \quad\Longrightarrow\quad T_2 = V_2(q_2) - \big[V_2(q_1) - V_1(q_1)\big].$$
-  Le type 2 ne paie donc pas toute sa valorisation : il conserve une **rente informationnelle** égale à $V_2(q_1)-V_1(q_1)$, c'est-à-dire l'avantage qu'il tirerait à consommer la quantité destinée au type 1.
+  À l'optimum le type 2 est donc *indifférent* entre les deux menus : $$V_2(q_2) - T_2 = V_2(q_1) - T_1 \quad\Longrightarrow\quad T_2 = V_2(q_2) - \big[V_2(q_1) - V_1(q_1)\big].$$ Le type 2 ne paie donc pas toute sa valorisation : il conserve une **rente informationnelle** égale à $V_2(q_1)-V_1(q_1)$, c'est-à-dire l'avantage qu'il tirerait à consommer la quantité destinée au type 1.
 
 - **(CP**$_2$) et (CI$_1$) sont vérifiées automatiquement (elles sont *non saturées*).
   Pour (CP$_2$) : le surplus du type 2 vaut $V_2(q_1)-V_1(q_1)\geq 0$, donc il participe.
@@ -1413,18 +1349,11 @@ On modélise le problème de la manière suivante :
 - Avec des fonctions de demande inverses $P_A(q_A)$ et $P_B(q_B)$ ;
 - Une quantité $q$ totale a été produite, qu'il faut répartir entre les 2 groupes : $q=q_A+q_B$.
 
-Le problème du monopole s'écrit :
-$$\max_{q_A, q_B} \pi(q_A, q_B) = q_AP_A(q_A) + q_BP_B(q_B) -C(q)$$
-Dans un premier temps, on suppose que la quantité totale $q$ est fixée, donc le coût total l'est aussi et peut être supprimé du problème de maximisation.
-On cherche donc juste à maximiser la recette totale :
-$$\max_{q_A, q_B} q_AP_A(q_A) + q_BP_B(q_B) $$
-Avec $q=q_A+q_B$, donc $q_B=q-q_A$, le problème devient :
-$$\begin{array}{rl}
+Le problème du monopole s'écrit : $$\max_{q_A, q_B} \pi(q_A, q_B) = q_AP_A(q_A) + q_BP_B(q_B) -C(q)$$ Dans un premier temps, on suppose que la quantité totale $q$ est fixée, donc le coût total l'est aussi et peut être supprimé du problème de maximisation.
+On cherche donc juste à maximiser la recette totale : $$\max_{q_A, q_B} q_AP_A(q_A) + q_BP_B(q_B) $$ Avec $q=q_A+q_B$, donc $q_B=q-q_A$, le problème devient : $$\begin{array}{rl}
 &\max_{q_A, 0\leq q_A\leq q} q_AP_A(q_A) + (q-q_A)P_B(q-q_A) \\
 \Leftrightarrow &\max_{q_A, 0\leq q_A\leq q} R_A(q_A) + R_B(q-q_A) 
-\end{array}$$
-La condition du premier ordre s'écrit :
-$$\begin{array}{rl}
+\end{array}$$ La condition du premier ordre s'écrit : $$\begin{array}{rl}
 &\frac{dR_A(q_A) + R_B(q-q_A) }{dq_A} = 0\\
 \Leftrightarrow & R_{mA}(q_A) - R_{mB}(q-q_A) = 0\\
 \Leftrightarrow & R_{mA}(q_A) = R_{mB}(q_B) 
@@ -1438,14 +1367,10 @@ Inversement dans le cas opposé.
 Il n'est donc pas intéressant de transférer la production d'un groupe vers un autre lorsque $R_{mA}(q_A) = R_{mB}(q_B)$ (et seulement dans ce cas).
 
 Maintenant que la répartition est résolue, il faut trouver la quantité totale produite.
-Le problème devient maintenant :
-$$\max_{q_A, q_B} \pi(q_A, q_B) = q_AP_A(q_A) + q_BP_B(q_B) -C(q_A+q_B)$$
-La condition du premier ordre s'obtient maintenant en dérivant suivant $q_A$ et $q_B$ séparément :
-$$\begin{array}{rcl}
+Le problème devient maintenant : $$\max_{q_A, q_B} \pi(q_A, q_B) = q_AP_A(q_A) + q_BP_B(q_B) -C(q_A+q_B)$$ La condition du premier ordre s'obtient maintenant en dérivant suivant $q_A$ et $q_B$ séparément : $$\begin{array}{rcl}
 \frac{\partial\pi(q_A, q_B)}{\partial q_A} = 0&\Leftrightarrow& R_{mA}(q_A^*) = C_m(q_A^*+q_B^*)\\
 \frac{\partial\pi(q_A, q_B)}{\partial q_B} = 0&\Leftrightarrow& R_{mB}(q_B^*) = C_m(q_A^*+q_B^*)\\
-\end{array}$$
-Le monopole doit faire en sorte que le coût marginal de sa production totale soit égale à la recette marginale sur chacun des marchés.
+\end{array}$$ Le monopole doit faire en sorte que le coût marginal de sa production totale soit égale à la recette marginale sur chacun des marchés.
 
 *Intuition :* Le monopole doit égaliser la recette marginale sur les deux marchés.
 Or le coût marginal dépend de la quantité *totale* produite, pas de la répartition entre les marchés.
@@ -1458,17 +1383,11 @@ On utilise bien $C_m(q_A+q_B)$ et non $C_m(q_A)$ ou $C_m(q_B)$ car c'est bien la
 
 #### Prix et élasticité-prix
 
-D'après l'@eq-rm, on a :
-$$\begin{array}{crcl}
+D'après l'@eq-rm, on a : $$\begin{array}{crcl}
 &R_{mA}(q_A^*) &=& R_{mB}(q_B^*)\\
 \Leftrightarrow & P_A(q_A^*)\left(1-\frac{1}{\left|\varepsilon_{q/p_A}(q^*_A)\right|}\right) & = & P_B(q_B^*)\left(1-\frac{1}{\left|\varepsilon_{q/p_B}(q_B^*)\right|}\right)
-\end{array}$$
-Sans perte de généralité, on peut supposer que $P_A(q_A^*)> P_B(q_B^*)$.
-On obtient alors que :
-$$1-\frac{1}{\left|\varepsilon_{q/p_A}(q_A^*)\right|} <1-\frac{1}{\left|\varepsilon_{q/p_B}(q_B^*)\right|}$$
-Autrement dit
-$$\left|\varepsilon_{q/p_B}(q_B^*)\right|>\left|\varepsilon_{q/p_A}(q^*_A)\right|$$
-Le prix est donc plus faible pour le groupe où l'élasticité prix de la demande est plus élevée.
+\end{array}$$ Sans perte de généralité, on peut supposer que $P_A(q_A^*)> P_B(q_B^*)$.
+On obtient alors que : $$1-\frac{1}{\left|\varepsilon_{q/p_A}(q_A^*)\right|} <1-\frac{1}{\left|\varepsilon_{q/p_B}(q_B^*)\right|}$$ Autrement dit $$\left|\varepsilon_{q/p_B}(q_B^*)\right|>\left|\varepsilon_{q/p_A}(q^*_A)\right|$$ Le prix est donc plus faible pour le groupe où l'élasticité prix de la demande est plus élevée.
 Le prix est plus élevé pour le groupe avec l'élasticité la plus faible, les moins réactifs au prix.
 
 ::: {#exm-discri-pro}
