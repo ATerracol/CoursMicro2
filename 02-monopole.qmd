@@ -22,10 +22,10 @@ Il est intéressant à étudier car il nous renseigne sur les principaux aspects
 Il y a de nombreuses raisons qui aboutissent à l'existence de monopoles.
 Les principales sont :
 
-- Légales, à cause de réglementation particulières. C'est ce qu'on appelle en général des professions réglementées, comme les avocats, les bureaux de tabac, les taxis...
+- Légales, à cause de réglementations particulières. C'est ce qu'on appelle en général des professions réglementées, comme les avocats, les bureaux de tabac, les taxis...
 - Légales, à cause des brevets sur une technologie donnée (industrie pharmaceutique, ...) ;
-- Historique, le premier arrivé ;
-- Monopoles *naturels* : en présence d'économies d'échelles, produire une quantité donnée revient moins cher avec un seul producteur qu'avec plusieurs. C'est notamment les cas des industries où il faut installer des réseaux (chemins de fer, électricité, téléphone, ...). Plus généralement, les industries avec des coûts fixes ou des coûts d'entrées très élevées aboutissent à des formes proches du monopole naturel (sidérurgie, automobile, semi-conducteurs...) ;
+- Historiques, le premier arrivé ;
+- Monopoles *naturels* : en présence d'économies d'échelle, produire une quantité donnée revient moins cher avec un seul producteur qu'avec plusieurs. C'est notamment le cas des industries où il faut installer des réseaux (chemins de fer, électricité, téléphone, ...). Plus généralement, les industries avec des coûts fixes ou des coûts d'entrée très élevés aboutissent à des formes proches du monopole naturel (sidérurgie, automobile, semi-conducteurs...) ;
 - Exclusivité sur la production de certaines matières premières (cuivre au Chili, terres rares en Chine, ...) ;
 - Coalitions créant un cartel ;
 - ...
@@ -40,10 +40,10 @@ Cela permet au monopole de percevoir la *vraie* courbe de demande agrégée et n
 Le choix de la quantité qu'il met sur le marché modifie le prix auquel il pourra vendre sa production et il le sait.
 Il va choisir **un** des paramètres du couple $(q^*, p^*)$ du prix et de la quantité sur le marché.
 L'autre en découlera, à travers la demande inverse $P(q)$ ou la demande $Q(p)$.
-Autrement dit, s'il choisit $q^*$, le prix sur le marché $p^*$ sera déterminé par le demande inverse ($p^*=P(q^*)$).
+Autrement dit, s'il choisit $q^*$, le prix sur le marché $p^*$ sera déterminé par la demande inverse ($p^*=P(q^*)$).
 Si, au contraire, il choisit $p^*$, la quantité échangée $q^*$ sera déterminée par la demande ($q^*=Q(p^*)$).
 
-En CPP, la recette totale du producteur individuel était $R(q) = q\cdot P(q^*)$, où $q$ est sa production individuel, $q^*$ la quantité d'équilibre sur le marché (résultat de la production de *toutes* les entreprises présentes sur le marché) et $P(q^*)=p^*$ est le prix d'équilibre.
+En CPP, la recette totale du producteur individuel était $R(q) = q\cdot P(q^*)$, où $q$ est sa production individuelle, $q^*$ la quantité d'équilibre sur le marché (résultat de la production de *toutes* les entreprises présentes sur le marché) et $P(q^*)=p^*$ est le prix d'équilibre.
 
 En monopole, le prix dépend de la production du monopole (ou l'inverse, peu importe).
 La recette totale du monopole s'écrit donc : $$R(q) = q\cdot P(q) \text{ ou } R(p)= Q(p)\cdot p$$
@@ -139,7 +139,7 @@ De l'@eq-rm, on observe que le signe de la recette marginale $R_m$ dépend de l'
 2.  Si la demande est inélastique ($|\varepsilon_{q/p}(q)|<1$), alors $R_m(q)<0$, donc si la quantité augmente, le revenu diminue.
 :::
 
-La @fig-mono-elasticite représente les différentes zone pour l'élasticité prix de la demande sur la courbe de demande.
+La @fig-mono-elasticite représente les différentes zones pour l'élasticité prix de la demande sur la courbe de demande.
 
 ```{r monopoleelasticite}
 #| label: fig-mono-elasticite
@@ -164,7 +164,7 @@ p2 + geom_segment(x=0, y=0, xend = 0.5, yend = 0.5, linetype="dashed") +
 
 ### Représentation graphique
 
-La courbe de recette marginale est toujours située en-dessous de la courbe de demande, en effet : $$R_m(q) = P(q) + qP'(q) < P(q)$$
+La courbe de recette marginale est toujours située en dessous de la courbe de demande, en effet : $$R_m(q) = P(q) + qP'(q) < P(q)$$
 
 car $P'(q)$ est négative (la demande inverse est décroissante).
 
@@ -175,11 +175,11 @@ Prenons maintenant l'exemple d'une courbe de demande inverse linéaire quelconqu
 On obtient alors $R_m(q) = a-2bq$ (et $R(q) = aq-bq^2$).\
 Dans le cas linéaire, la recette marginale est une droite de pente deux fois plus élevée que la demande, et ayant la même ordonnée à l'origine.
 La recette marginale divise en deux tout segment horizontal entre l'axe des ordonnées et la courbe de demande inverse.
-On peut ainsi représenter graphiquement, comme dans la @fig-recette-marginale la demande, la recette marginale et la recette totale.
+On peut ainsi représenter graphiquement, comme dans la @fig-recette-marginale, la demande, la recette marginale et la recette totale.
 
 ```{r recettemarginale}
 #| label: fig-recette-marginale
-#| fig-cap: "Elasticité et recette."
+#| fig-cap: "Élasticité et recette."
 Rm <- function(q)(1-2*q)
 R <- function(q)(q-q^2)
 
@@ -230,7 +230,7 @@ Sur la @fig-mono-profit, on voit qu'il est possible de calculer la recette total
 ### Maximisation du profit
 
 Comme en CPP, le producteur, ici en situation de monopole, cherche à maximiser son profit $\pi(q)=R(q)-C(q)$, où $C(q)$ est la fonction de coût (total) du monopole.\
-Il y a 2 conditions d'optimalités, les conditions de premier ordre (la dérivée du profit à l'optimum est nulle : $\pi'(q^*)=0$) et de second ordre (la dérivée seconde du profit à l'optimum est strictement négative $\pi''(q^*)<0$), ainsi qu'une contrainte, que le profit à l'optimum soit positif ($\pi(q^*)\geq 0$).
+Il y a 2 conditions d'optimalité, les conditions de premier ordre (la dérivée du profit à l'optimum est nulle : $\pi'(q^*)=0$) et de second ordre (la dérivée seconde du profit à l'optimum est strictement négative $\pi''(q^*)<0$), ainsi qu'une contrainte, que le profit à l'optimum soit positif ($\pi(q^*)\geq 0$).
 
 La condition de premier ordre s'exprime ainsi : $$\begin{array}{rcl}
 \pi'(q^*) &=&0\\
@@ -265,8 +265,8 @@ $$R_m(q^*)=C_m(q^*) $$ {#eq-cpo} $$R_m'(q^*) <C_m'(q^*)$$ {#eq-cso} $$\pi(q^*)\g
 :::
 
 La @fig-monopoleoptimale donne l'intuition graphique de l'égalité entre le coût marginal et la recette marginale.
-Si le monopole produit plus que $q_m^*$, alors chaque unité produite en plus lui coûte plus chère qu'elle ne lui rapporte, car le coût marginal est *supérieur* à la recette marginale.
-A l'inverse, s'il produit moins, produire des unités en plus lui rapporterait plus que cela ne lui coûte, car le coût marginal est *inférieur* à la recette marginale.
+Si le monopole produit plus que $q_m^*$, alors chaque unité produite en plus lui coûte plus cher qu'elle ne lui rapporte, car le coût marginal est *supérieur* à la recette marginale.
+À l'inverse, s'il produit moins, produire des unités en plus lui rapporterait plus que cela ne lui coûte, car le coût marginal est *inférieur* à la recette marginale.
 
 ```{r monopoleoptimale}
 #| label: fig-monopoleoptimale
@@ -382,14 +382,14 @@ Dès lors que l'élasticité de la demande au prix n'est plus infinie en revanch
 
 Si $\left|\varepsilon_{q/p}(q^*)\right|<1$, c'est-à-dire que si la demande est inélastique, alors $1 - \frac{1}{\left|\varepsilon_{q/p}(q^*)\right|} <0$, ce qui implique que la recette marginale $R_m$ est négative et donc impossible à égaliser avec le coût marginal $C_m$.\
 On peut voir la réponse d'une autre façon.
-Si la pente est inélastique, alors la recette $R$ augmente quand la quantité $q$ baisse.
+Si la demande est inélastique, alors la recette $R$ augmente quand la quantité $q$ baisse.
 Le coût total $C$ baisse aussi quand la quantité baisse.
 Le monopole aurait donc tout intérêt à réduire sa production lorsque la demande est inélastique.
 
 ::: {#cor-elasticite}
 ## Élasticité de la demande à l'optimum
 
-À l'optimum, le monopole opère dans la zone élastique de la courbe de demande : $\left|\varepsilon_{q/p}(q^*)\right|>1$ .
+À l'optimum, le monopole opère dans la zone élastique de la courbe de demande : $\left|\varepsilon_{q/p}(q^*)\right|>1$.
 :::
 
 ### Indice de pouvoir du monopole
@@ -401,7 +401,7 @@ Le pouvoir de marché d'un producteur est sa capacité à élever son prix au-de
 :::
 
 La capacité du monopole à vendre à un prix supérieur au coût marginal dépend de la plus ou moins grande élasticité de la demande au prix.
-Cela permet de construire un indice du *pouvoir de monopole* à partir de l'élasticité du prix à la demande à l'équilibre.
+Cela permet de construire un indice du *pouvoir de monopole* à partir de l'élasticité de la demande au prix à l'équilibre.
 On a, d'après l'@eq-rmcm : $$R_m(q^*) = P(q^*)\left(1 - \frac{1}{|\varepsilon_{q/p}(q^*)|}\right) = C_m(q^*) $$ On en déduit :
 
 $$\begin{array}{rl}
@@ -412,7 +412,7 @@ $$\begin{array}{rl}
 ::: {#def-Lerner}
 ## Indice de Lerner
 
-L'indice de Lerner $L$ mesure la capacité d'un monopole à vendre au-dessus de son prix marginal : $$L=\frac{P(q^*) - C_m(q^*)}{P(q^*)} $$ {#eq-Lerner}
+L'indice de Lerner $L$ mesure la capacité d'un monopole à vendre au-dessus de son coût marginal : $$L=\frac{P(q^*) - C_m(q^*)}{P(q^*)} $$ {#eq-Lerner}
 :::
 
 D'après les calculs précédents, l'indice de Lerner est inversement proportionnel à l'élasticité prix de la demande.
@@ -427,7 +427,7 @@ En monopole, si la demande change, le monopole s'adapte, soit en changeant sa pr
 
 ```{r monopolechangementdemande1}
 #| label: fig-mono-changement-demande1
-#| fig-cap: "Exemple de réaction du monopole à un changement de demande: changement de prix."
+#| fig-cap: "Exemple de réaction du monopole à un changement de demande : changement de prix."
 
 P <- function(q){1-q}
 Rm <- function(q){1-2*q}
@@ -460,7 +460,7 @@ p_prix
 
 ```{r monopolechangementdemande2}
 #| label: fig-mono-changement-demande2
-#| fig-cap: "Exemple de réaction du monopole à un changement de demande: changement de quantité."
+#| fig-cap: "Exemple de réaction du monopole à un changement de demande : changement de quantité."
 
 p_quantité <- p_changement +
   scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(P(qm)), labels=c(expression(p[1]^"*"==p[2]^"*"))) +
@@ -469,7 +469,7 @@ p_quantité <- p_changement +
 p_quantité
 ```
 
-En CPP, un changement de demande, si elle implique une changement du prix d'équilibre, entraîne forcément un changement dans la quantité produite par un producteur individuel.
+En CPP, un changement de demande, s'il implique un changement du prix d'équilibre, entraîne forcément un changement dans la quantité produite par un producteur individuel.
 
 ### L'inefficience du monopole
 
@@ -507,7 +507,7 @@ p_surplus
 
 Cela implique que le surplus du producteur (son profit) est plus élevé en monopole qu'en CPP, et que le surplus des consommateurs est plus faible.
 Il y a globalement une perte sèche de surplus total, comme on peut le voir sur la @fig-mono-surplus.
-**Le monopole est inefficace au sens de Pareto.** Il existe des consommateurs prêt à acheter à un prix supérieur au coût marginal (dans le triangle de la perte sèche).
+**Le monopole est inefficace au sens de Pareto.** Il existe des consommateurs prêts à acheter à un prix supérieur au coût marginal (dans le triangle de la perte sèche).
 Il est donc possible d'avoir une amélioration parétienne qui améliore à la fois la situation des consommateurs et du monopole.
 Il suffirait pour cela que le monopole produise une unité supplémentaire du bien à un prix supérieur au coût marginal, sans rien changer d'autre pour obtenir cette amélioration.
 
@@ -516,10 +516,10 @@ Il suffirait pour cela que le monopole produise une unité supplémentaire du bi
 Une situation de monopole est dite *naturelle* si le monopole émerge à cause d'une structure particulière de la technologie de production et des coûts, plutôt qu'à cause d'une disposition légale.
 
 ::: {#def-rdts-echelles}
-## Rendements d'échelles
+## Rendements d'échelle
 
-Les *rendements d'échelles* sont croissants lorsque la technologie de production $f$ est telle que : $$f(\lambda z_1, \lambda z_2, ...\lambda z_n) > \lambda f(z_1,z_2, ..., z_n)$$ où les $z_i$ sont les facteurs de productions.
-En mots : une entreprise utilisant $\lambda$ fois plus de facteurs de productions qu'une petite entreprise produit plus que $\lambda$ petites entreprises réunies.
+Les *rendements d'échelle* sont croissants lorsque la technologie de production $f$ est telle que : $$f(\lambda z_1, \lambda z_2, ...\lambda z_n) > \lambda f(z_1,z_2, ..., z_n)$$ où les $z_i$ sont les facteurs de production.
+En mots : une entreprise utilisant $\lambda$ fois plus de facteurs de production qu'une petite entreprise produit plus que $\lambda$ petites entreprises réunies.
 :::
 
 Une conséquence des rendements d'échelle croissants est que le coût moyen est décroissant : $$C_M(f(\lambda z)) =\frac{\lambda z\cdot w_z}{f(\lambda z)} < C_M(\lambda f(z)) = \frac{\lambda z\cdot w_z}{\lambda f(z)}$$ car $f(\lambda z)>\lambda f(z)$.
@@ -529,22 +529,22 @@ Il y a ici des économies d'échelle.
 ::: {#def-eco-echelle}
 ## Économie d'échelle
 
-Il y a des *économies d'échelle* quand une unité de bien produite en plus revient moins chère que l'unité précédente.
+Il y a des *économies d'échelle* quand une unité de bien produite en plus revient moins cher que l'unité précédente.
 Cela signifie que le *coût moyen* baisse quand le producteur produit plus d'unités.
 :::
 
 ::: {#def-mono-naturel}
 ## Monopole naturel
 
-Un monopole naturel émerge en présence d'économies d'échelles dans la zone de production optimale.
+Un monopole naturel émerge en présence d'économies d'échelle dans la zone de production optimale.
 :::
 
-En général, les économies d'échelles proviennent de coûts fixes élevés.
-Par exemple, lorsqu'il faut investir dans un réseau (ferrés, téléphone, électricité, etc).
+En général, les économies d'échelle proviennent de coûts fixes élevés.
+Par exemple, lorsqu'il faut investir dans un réseau (ferré, téléphone, électricité, etc.).
 
 Il y a presque toujours une zone où le coût moyen est décroissant, mais elle est rarement très étendue.
-Dans la @fig-nat-cout, la demande inverse 1 coupe la courbe de coût marginal à un endroit où les économies d'échelle sont décroissantes.
-La demande 2, en revanche, la coupe à un endroit où les économies d'échelle sont croissantes.
+Dans la @fig-nat-cout, la demande inverse 1 coupe la courbe de coût marginal à un endroit où le coût moyen est croissant : il n'y a plus d'économies d'échelle.
+La demande 2, en revanche, la coupe à un endroit où le coût moyen est encore décroissant, donc en présence d'économies d'échelle.
 
 ```{r monopolenaturelcout}
 #| label: fig-nat-cout
@@ -591,7 +591,7 @@ On en déduit donc que : $$C_m(q)-C_M(q)< 0 \Leftrightarrow C_m(q)<C_M(q)$$
 ::: remark
 ## Rendements d'échelle et économies d'échelle
 
-Il ne faut pas confondre les rendements d'échelle, qui mettent en relation les **quantités** de facteurs de productions et les quantités de biens produites et économies d'échelle, qui est une notion lié au **coût** de production des unités de biens produites.
+Il ne faut pas confondre les rendements d'échelle, qui mettent en relation les **quantités** de facteurs de production et les quantités de biens produites, et les économies d'échelle, qui sont une notion liée au **coût** de production des unités de biens produites.
 :::
 
 ## Régulation du monopole
@@ -603,7 +603,7 @@ Cette partie traite de la manière dont un régulateur, en général l'État, pe
 Nous avons jusqu'à présent étudié deux types d'acteurs sur un marché : les consommateurs et les producteurs.
 On introduit maintenant un troisième type d'acteur : le régulateur.
 Ce type d'acteur diffère des deux types précédents.
-Il intervient sur le marché en imposant différent types de règles (loi), que nous verrons par la suite.
+Il intervient sur le marché en imposant différents types de règles (loi), que nous verrons par la suite.
 Dans notre modélisation, le régulateur a un objectif : maximiser le bien-être social, autrement dit, maximiser le surplus total.
 On fera l'hypothèse très simplificatrice qu'il n'y a pas de coût à imposer une règle et que la règle est toujours parfaitement suivie.
 
@@ -623,7 +623,7 @@ On dit que le régulateur impose une tarification au coût moyen pour dire que l
 Le monopole égalise la demande inverse avec son coût moyen.
 Cette règle est surtout utile dans la situation de monopole naturel, où une tarification au coût marginal entraîne des profits négatifs et donc la fermeture du monopole et la fin du marché.
 
-Ces règles de tarification sont en général difficile à mettre en oeuvre, car elle nécessie une information précise sur les coûts de production, en particulier dans la tarification au coût marginal.
+Ces règles de tarification sont en général difficiles à mettre en œuvre, car elles nécessitent une information précise sur les coûts de production, en particulier dans la tarification au coût marginal.
 
 ### Taxes et subventions
 
@@ -873,7 +873,7 @@ La condition de réalisabilité $t^*\leq 1$ est en revanche la même que pour la
 
 ### Prix maximal
 
-Le régulateur fixe un *prix maximal* $p^{max}$ au dessus duquel le monopole ne peut pas vendre.
+Le régulateur fixe un *prix maximal* $p^{max}$ au-dessus duquel le monopole ne peut pas vendre.
 Il modifie ainsi la demande perçue par le producteur.
 
 ```{r monopoleprixmaximal}
@@ -987,7 +987,7 @@ p_naturel + scale_x_continuous(expand = c(0, 0), limits = c(0, 2.5), breaks=c(qc
 ```
 
 Si le régulateur impose une tarification au coût marginal, à l'aide d'un prix maximal, par exemple, alors le monopole fait des pertes, car le prix est inférieur au coût moyen.
-La régulation "optimale" généralement utilisée impose *un prix au coût moyen* et une obligation de satisfaire toute la demande.
+La régulation « optimale » généralement utilisée impose *un prix au coût moyen* et une obligation de satisfaire toute la demande.
 Le monopole fait alors un profit nul.
 
 Une solution alternative est un prix égal au coût marginal assorti de subventions pour couvrir les pertes.
@@ -1002,11 +1002,11 @@ Il existe trois types de discriminations par les prix, les discriminations du pr
 ### Discrimination au premier degré (discrimination parfaite)
 
 En discrimination parfaite, le monopole connaît la valorisation (prix de réserve) de chaque individu et lui fait payer le prix maximum qu'il est prêt à payer (son prix de réserve donc).
-Le consommateur n'obtient aucun surplus, la *totalité* du surplus est capturé par le producteur.
+Le consommateur n'obtient aucun surplus, la *totalité* du surplus est capturée par le producteur.
 
 *Question :* Quel va être le niveau de production du monopole ?
 
-Comme le monopole fait payer chaque unité à la valorisation du consommateur, la première unité est vendue au prix P(1), la deuxième au prix P(2), etc.
+Comme le monopole fait payer chaque unité à la valorisation du consommateur, la première unité est vendue au prix $P(1)$, la deuxième au prix $P(2)$, etc.
 La recette totale est donc : $$R(q) = \int_0^q P(x) dx$$
 
 Le profit est : $$\pi(q) = R(q) - C(q) = \int_0^q P(x) dx -C(q)$$ La condition du premier ordre s'écrit donc : $$\begin{array}{rl}
@@ -1057,8 +1057,8 @@ Les entreprises essaient de s'en approcher le plus possible.
 ::: {#exm-discri-parfaite}
 ## Exemple de discrimination parfaite
 
-Lors d'une vente de bons du trésors des Etats-Unis, chaque ménage intéressé soumettait une offre (prix, quantité) au gouvernement.
-Le gouvernement triait les offres par ordre décroissant de prix et les satisfait jusqu'à épuisement des bons à vendre.
+Lors d'une vente de bons du Trésor des États-Unis, chaque ménage intéressé soumettait une offre (prix, quantité) au gouvernement.
+Le gouvernement triait les offres par ordre décroissant de prix et les satisfaisait jusqu'à épuisement des bons à vendre.
 :::
 
 ### Discrimination du deuxième degré
@@ -1075,7 +1075,7 @@ Les consommateurs de type 2 le valorisant plus que les consommateurs de type 1, 
 Il est important de comprendre que ces fonctions de demande inverse sont des fonctions de demande inverse **individuelles**, et non pas des fonctions agrégées au niveau de chaque groupe de consommateurs.
 Elles représentent la suite des valorisations marginales de **chaque** consommateur d'un type donné.
 Dans un premier temps, on suppose pour simplifier qu'il y a autant de consommateurs de type 1 que de type 2 (le raisonnement se mène alors « par consommateur », en comparant un consommateur de chaque type) ; on lèvera cette hypothèse plus loin.
-On suppose également que ces fonctions de demande inverse sont linéaires, et que le coût marginal est constant : $Cm(q)=c$.
+On suppose également que ces fonctions de demande inverse sont linéaires, et que le coût marginal est constant : $C_m(q)=c$.
 La situation est représentée sur la @fig-discri2-demande.
 
 ```{r discri2}
@@ -1321,7 +1321,7 @@ Ces stratégies permettent aux entreprises de maximiser leurs profits en captura
 
 <!-- A faire si le temps le permet. -->
 
-Il s'agit de faire payer un prix différent à chaque groupe de consommateur en fonction des caractéristiques de leurs fonctions de demande.
+Il s'agit de faire payer un prix différent à chaque groupe de consommateurs en fonction des caractéristiques de leurs fonctions de demande.
 Les groupes sont en général caractérisés par des propensions à payer différentes.
 Tous les membres d'un groupe paient le même prix, contrairement à la discrimination au premier degré.
 Il s'agit d'une segmentation des consommateurs.
@@ -1341,7 +1341,7 @@ Pour pratiquer la discrimination au troisième degré, il faut pouvoir identifie
 
 *Méthode :* On résout d'abord 2 en supposant que 1 est déjà résolu.
 On obtient alors la répartition en fonction de la production totale.
-Puis ou résout 1 à l'aide de la solution de 2.
+Puis on résout 1 à l'aide de la solution de 2.
 
 On modélise le problème de la manière suivante :
 
@@ -1370,7 +1370,7 @@ Maintenant que la répartition est résolue, il faut trouver la quantité totale
 Le problème devient maintenant : $$\max_{q_A, q_B} \pi(q_A, q_B) = q_AP_A(q_A) + q_BP_B(q_B) -C(q_A+q_B)$$ La condition du premier ordre s'obtient maintenant en dérivant suivant $q_A$ et $q_B$ séparément : $$\begin{array}{rcl}
 \frac{\partial\pi(q_A, q_B)}{\partial q_A} = 0&\Leftrightarrow& R_{mA}(q_A^*) = C_m(q_A^*+q_B^*)\\
 \frac{\partial\pi(q_A, q_B)}{\partial q_B} = 0&\Leftrightarrow& R_{mB}(q_B^*) = C_m(q_A^*+q_B^*)\\
-\end{array}$$ Le monopole doit faire en sorte que le coût marginal de sa production totale soit égale à la recette marginale sur chacun des marchés.
+\end{array}$$ Le monopole doit faire en sorte que le coût marginal de sa production totale soit égal à la recette marginale sur chacun des marchés.
 
 *Intuition :* Le monopole doit égaliser la recette marginale sur les deux marchés.
 Or le coût marginal dépend de la quantité *totale* produite, pas de la répartition entre les marchés.
@@ -1378,7 +1378,7 @@ Si on est dans la situation telle que $C_m(q)<R_{mA}(q_A)$, alors il y a la poss
 Inversement, si $C_m(q)>R_{mA}(q_A)$, alors le monopole fait des pertes.
 
 ::: remark
-On utilise bien $C_m(q_A+q_B)$ et non $C_m(q_A)$ ou $C_m(q_B)$ car c'est bien la variation du coût total lorsqu'on augmente "un peu" $q_A$ avec $q_B$ qui reste fixe.
+On utilise bien $C_m(q_A+q_B)$ et non $C_m(q_A)$ ou $C_m(q_B)$ car c'est bien la variation du coût total lorsqu'on augmente « un peu » $q_A$ avec $q_B$ qui reste fixe.
 :::
 
 #### Prix et élasticité-prix
@@ -1393,9 +1393,9 @@ Le prix est plus élevé pour le groupe avec l'élasticité la plus faible, les 
 ::: {#exm-discri-pro}
 ## Tarifs professionnels
 
-Les tarifs "professionnels" dans les transports (avion, train, etc).
+Les tarifs « professionnels » dans les transports (avion, train, etc.).
 Les professionnels sont moins sensibles au prix car leurs dates de voyage sont moins flexibles que celles des particuliers.
 Leurs élasticités-prix sont donc plus faibles et leurs prix plus élevés.
 :::
 
-Des fonctions de demande inverse différentes associées à des élasticités-prix de la demande différente aboutissent à des prix différents.
+Des fonctions de demande inverse différentes associées à des élasticités-prix de la demande différentes aboutissent à des prix différents.
